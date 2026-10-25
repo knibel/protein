@@ -10,6 +10,7 @@ Statische Web-App (HTML, CSS, JavaScript ohne Build-Schritt und ohne Abhängigke
 - Sortierung nach Protein pro 100 g, Proteinanteil an den Kalorien, Verfügbarkeit in deutschen Supermärkten, Erschwinglichkeit oder Name
 - Pro Zutat grobe Einstufung von Preis (günstig/mittel/teuer) und Verfügbarkeit, ohne konkrete Eurobeträge
 - Aminosäure-Ergänzung: bis zu drei Zutaten abhaken, die Liste zeigt dann nur noch Zutaten, die sich mit der Auswahl zu einem guten Aminosäureprofil ergänzen (samt Mengenverhältnis) (Details: [docs/AMINOSAEUREN.md](docs/AMINOSAEUREN.md))
+- Gerichtvorschläge: zur abgehakten Auswahl erscheinen traditionelle vegetarische Gerichte aus verschiedenen Küchen mit berechnetem Aminosäure-Score (Details: [docs/GERICHTE.md](docs/GERICHTE.md))
 - Portionsrechner: Protein in einer frei wählbaren Grammzahl
 - Hell- und Dunkelmodus (folgt dem System)
 
@@ -32,6 +33,7 @@ Siehe [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) (GitHub Pages, Branch `main`, Ord
 index.html        Seitengerüst
 css/style.css     Gestaltung
 js/data.js        Zutatendaten (window.ZUTATEN)
+js/gerichte.js      Traditionelle Gerichte (window.GERICHTE)
 js/komplement.js   Aminosäure-Score und Ergänzungslogik (auch in Node nutzbar)
 js/app.js         Filter, Sortierung, Darstellung
 tests/            Node-Test für die Ergänzungslogik
@@ -44,6 +46,7 @@ CLAUDE.md         Hinweise für Claude Code
 
 - [Architektur](docs/ARCHITEKTUR.md)
 - [Aminosäure-Ergänzung](docs/AMINOSAEUREN.md)
+- [Gerichte](docs/GERICHTE.md)
 - [Daten pflegen](docs/DATEN.md)
 - [Deployment](docs/DEPLOYMENT.md)
 

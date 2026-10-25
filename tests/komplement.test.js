@@ -46,4 +46,22 @@ assert.ok(zwei.voll || zwei.treffer.length > 0);
 
 // Zutaten ohne Aminosäuredaten nehmen nicht teil.
 assert.ok(!z("Seitan").aminos);
+// Gerichte: alle Zutaten existieren, haben Aminosäuredaten und plausible Mengen.
+require("../js/gerichte.js");
+window.GERICHTE.forEach((g) => {
+  assert.ok(g.zutaten.length > 0, g.name);
+  const posten = g.zutaten.map((p) => {
+    const zutat = z(p.name);
+    assert.ok(zutat && zutat.aminos, g.name + ": " + p.name);
+    assert.ok(p.gramm > 0 && p.gramm <= 400, g.name + ": Menge " + p.name);
+    return { zutat, gramm: p.gramm };
+  });
+  const r = K.bewerteGericht(posten);
+  assert.ok(r.score > 0 && r.score <= 1 && r.protein > 0, g.name);
+});
+// Reis + Linsen als Gericht ist besser als Reis allein.
+const mujaddara = window.GERICHTE.find((g) => g.name === "Mujaddara");
+const mScore = K.bewerteGericht(mujaddara.zutaten.map((p) => ({ zutat: z(p.name), gramm: p.gramm }))).score;
+assert.ok(mScore > K.bewerte(z("Reis (Vollkorn)").aminos).score);
+
 console.log("Alle Tests bestanden.");

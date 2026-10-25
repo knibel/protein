@@ -107,4 +107,5 @@ a { color: var(--accent); }
 }
 .waehlen input { width: 1.1rem; height: 1.1rem; padding: 0; accent-color: var(--accent); }
 .waehlen input:disabled + span { color: var(--muted); }
+.eintrag .zutatenzeile { grid-column: 1 / -1; font-size: .85rem; }
 .ergaenzung .aktion { margin-top: .25rem; }

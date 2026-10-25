@@ -17,11 +17,12 @@ Statische Web-App „Proteinquellen finden" für GitHub Pages. HTML + CSS + Vani
 
 - `index.html` – Gerüst und Filterelemente
 - `js/data.js` – Daten (`window.ZUTATEN`)
+- `js/gerichte.js` – Gerichte (`window.GERICHTE`), nur vegetarisch, Zutatennamen müssen zu `data.js` passen
 - `js/komplement.js` – Aminosäure-Logik ohne DOM (Browser und Node, kein ES-Modul)
 - `js/app.js` – Filter, Sortierung, Rendering
 - `tests/komplement.test.js` – Node-Test, kein Framework
 - `css/style.css` – Gestaltung
-- `docs/` – `ARCHITEKTUR.md`, `AMINOSAEUREN.md`, `DATEN.md`, `DEPLOYMENT.md`
+- `docs/` – `ARCHITEKTUR.md`, `AMINOSAEUREN.md`, `GERICHTE.md`, `DATEN.md`, `DEPLOYMENT.md`
 
 ## Prüfen
 

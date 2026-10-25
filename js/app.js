@@ -16,7 +16,10 @@
     erg: document.getElementById("ergaenzung"),
     ergTitel: document.getElementById("ergaenzungTitel"),
     ergText: document.getElementById("ergaenzungText"),
-    zuruecksetzen: document.getElementById("zuruecksetzen")
+    zuruecksetzen: document.getElementById("zuruecksetzen"),
+    gerichte: document.getElementById("gerichte"),
+    gerichteText: document.getElementById("gerichteText"),
+    gerichteListe: document.getElementById("gerichteListe")
   };
   var zahl = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 });
   var maxProtein = Math.max.apply(null, zutaten.map(function (z) { return z.protein; }));
@@ -188,12 +191,73 @@
     el.ergText.textContent = text;
   }
 
+  // Gerichte, die alle gewählten Zutaten enthalten; sonst die mit den meisten.
+  function rendereGerichte() {
+    var gerichte = window.GERICHTE || [];
+    el.gerichte.hidden = auswahl.length === 0;
+    if (auswahl.length === 0) return;
+    var namen = auswahl.map(function (z) { return z.name; });
+    var bewertet = gerichte.map(function (g) {
+      var posten = g.zutaten.map(function (p) {
+        return { zutat: zutaten.find(function (z) { return z.name === p.name; }), gramm: p.gramm };
+      });
+      var treffer = g.zutaten.filter(function (p) { return namen.indexOf(p.name) !== -1; }).length;
+      return { gericht: g, treffer: treffer, wert: K.bewerteGericht(posten) };
+    }).filter(function (r) { return r.treffer > 0; });
+    var alle = bewertet.filter(function (r) { return r.treffer === auswahl.length; });
+    var liste = alle;
+    if (alle.length > 0) {
+      el.gerichteText.textContent = alle.length + (alle.length === 1 ? " Gericht enthält" : " Gerichte enthalten") +
+        " alle gewählten Zutaten.";
+    } else {
+      var teil = bewertet.reduce(function (m, r) { return Math.max(m, r.treffer); }, 0);
+      liste = bewertet.filter(function (r) { return r.treffer === teil; });
+      el.gerichteText.textContent = teil === 0 ? "Kein Gericht in der Sammlung enthält eine der gewählten Zutaten."
+        : "Kein Gericht enthält alle gewählten Zutaten. Gezeigt werden Gerichte mit " + teil + " von " + auswahl.length + " Zutaten.";
+    }
+    liste.sort(function (a, b) { return (b.wert.score - a.wert.score) || (b.wert.protein - a.wert.protein); });
+    el.gerichteListe.replaceChildren.apply(el.gerichteListe, liste.map(erzeugeGericht));
+  }
+
+  function erzeugeGericht(r) {
+    var g = r.gericht;
+    var li = document.createElement("li");
+    li.className = "eintrag";
+
+    var balken = document.createElement("div");
+    balken.className = "balken";
+    balken.style.width = Math.min(r.wert.score * 100, 100) + "%";
+
+    var name = document.createElement("span");
+    name.className = "name";
+    name.textContent = g.name + " – " + g.herkunft;
+
+    var wert = document.createElement("span");
+    wert.className = "protein";
+    wert.textContent = "Score " + prozent(r.wert.score * 100) + " · ca. " + zahl.format(Math.round(r.wert.protein)) + " g Protein";
+
+    var beschr = document.createElement("span");
+    beschr.className = "meta zutatenzeile";
+    beschr.textContent = g.beschreibung;
+
+    var zut = document.createElement("span");
+    zut.className = "meta zutatenzeile";
+    zut.textContent = "Pro Portion: " + g.zutaten.map(function (p) {
+      return zahl.format(p.gramm) + " g " + p.name;
+    }).join(", ") + (g.weitere ? " · außerdem: " + g.weitere : "") +
+      (r.wert.score < 1 ? " · begrenzt durch " + K.NAMEN[r.wert.limit] : "");
+
+    li.append(balken, name, wert, beschr, zut);
+    return li;
+  }
+
   function rendere() {
     el.minAnzeige.textContent = el.minProtein.value;
     var portion = Number(el.portion.value);
     var info = bestimme();
     el.liste.replaceChildren.apply(el.liste, info.zeilen.map(function (r) { return erzeugeZeile(r, portion, info.erg); }));
     rendereAuswahl(info);
+    rendereGerichte();
 
     if (auswahl.length === 0) {
       el.status.textContent = info.zeilen.length === 0 ? "Keine Treffer."

@@ -13,6 +13,7 @@
 |---|---|
 | `index.html` | Formularelemente für die Filter, leere Liste `#liste`, lädt die Skripte |
 | `js/data.js` | Setzt `window.ZUTATEN` (Array von Objekten) |
+| `js/gerichte.js` | Setzt `window.GERICHTE`: Gerichte mit Kernzutaten und Mengen (siehe [GERICHTE.md](GERICHTE.md)) |
 | `js/komplement.js` | Reine Rechenlogik für Aminosäure-Scores und Ergänzungen, ohne DOM; gleiche Datei im Browser (`window.Komplement`) und in Node (`module.exports`) |
 | `js/app.js` | Liest die Filter, filtert und sortiert, erzeugt die Listeneinträge neu |
 | `css/style.css` | Layout, Farben über CSS-Variablen, Dunkelmodus per `prefers-color-scheme` |

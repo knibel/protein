@@ -158,10 +158,24 @@
     return ergebnis;
   }
 
+  // Bewertet ein Gericht: posten = [{ zutat, gramm }] (Zutaten mit aminos).
+  // Aminosäuren werden nach der Proteinmenge der Posten gewichtet.
+  function bewerteGericht(posten) {
+    var protein = 0, summe = REFERENZ.map(function () { return 0; });
+    posten.forEach(function (p) {
+      var g = p.gramm * p.zutat.protein / 100;
+      protein += g;
+      p.zutat.aminos.forEach(function (a, i) { summe[i] += g * a; });
+    });
+    var aminos = summe.map(function (x) { return x / protein; });
+    var b = bewerte(aminos);
+    return { protein: protein, aminos: aminos, score: b.score, roh: b.roh, limit: b.limit };
+  }
+
   var api = {
     NAMEN: NAMEN, REFERENZ: REFERENZ, MIN_PROTEIN: MIN_PROTEIN,
     bewerte: bewerte, mische: mische, besteMischung: besteMischung,
-    grammPartner: grammPartner, kombiniere: kombiniere, mengen: mengen, ergaenzungen: ergaenzungen
+    grammPartner: grammPartner, kombiniere: kombiniere, bewerteGericht: bewerteGericht, mengen: mengen, ergaenzungen: ergaenzungen
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.Komplement = api;
