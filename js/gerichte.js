@@ -293,10 +293,6 @@ window.GERICHTE = [
     beschreibung: "Nudeln mit einer Sauce aus Cashewkernen und Nährhefeflocken.",
     zutaten: [{ name: "Vollkornnudeln", gramm: 80 }, { name: "Cashewkerne", gramm: 30 }, { name: "Nährhefeflocken", gramm: 15 }],
     weitere: "Knoblauch, Zitronensaft, Senf" },
-  { name: "Dihé", herkunft: "Tschad (Kanembu)",
-    beschreibung: "Getrocknete Spirulina aus dem Tschadsee, traditionell in Saucen zu Getreidebrei verwendet; hier nur die Spirulina bewertet.",
-    zutaten: [{ name: "Spirulina", gramm: 10 }],
-    weitere: "Tomaten, Zwiebeln, Gewürze; dazu Hirse- oder Maisbrei (nicht bewertet)" },
 
   // --- Milchprodukte, Ei, Getreide ---
   { name: "Skyr mit Haferflocken", herkunft: "Island",

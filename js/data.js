@@ -73,7 +73,6 @@ window.ZUTATEN = [
   { name: "Reis (Vollkorn)", kategorie: "Getreide & Pseudogetreide", protein: 7, kcal: 350, preis: 1, verfuegbarkeit: 1, aminos: [26, 42, 83, 38, 35, 89, 37, 13, 59], zustand: "trocken" },
 
   // Gemüse & Pilze
-  { name: "Spirulina", kategorie: "Gemüse & Pilze", protein: 57, kcal: 290, preis: 3, verfuegbarkeit: 2, aminos: [19, 56, 86, 53, 32, 93, 52, 16, 61], zustand: "getrocknet" },
   { name: "Nährhefeflocken", kategorie: "Gemüse & Pilze", protein: 50, kcal: 350, preis: 3, verfuegbarkeit: 2, aminos: [23, 47, 72, 81, 27, 71, 49, 13, 57], aminosHinweis: "Ersatzwert: Bäckerhefe", zustand: "" },
   { name: "Grüne Erbsen", kategorie: "Gemüse & Pilze", protein: 6, kcal: 80, preis: 1, verfuegbarkeit: 1, aminos: [20, 36, 60, 58, 21, 58, 37, 7, 43], zustand: "gekocht" },
   { name: "Grünkohl", kategorie: "Gemüse & Pilze", protein: 4.3, kcal: 37, preis: 1, verfuegbarkeit: 1, aminos: [59, 60, 70, 60, 23, 87, 45, 12, 54], zustand: "roh" },
