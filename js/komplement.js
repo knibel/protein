@@ -12,7 +12,7 @@
   // FAO 2013, Tabelle 5: Kinder ab 3 Jahren, Jugendliche, Erwachsene (mg pro g Protein).
   var REFERENZ = [16, 30, 61, 48, 23, 41, 25, 6.6, 40];
 
-  var MIN_PROTEIN = 5;      // g Protein pro 100 g: schwächere Partner liefern praktisch nichts
+  var MIN_PROTEIN = 1.5;    // g Protein pro 100 g: schwächere Partner liefern praktisch nichts (Kartoffeln: 1,7)
   var W_MIN = 0.1;          // jede Zutat einer Mischung trägt mindestens 10 % des Proteins bei
   var W_MAX = 0.9;
   var MIN_GEWINN = 8;       // Prozentpunkte Verbesserung gegenüber der Zutat allein

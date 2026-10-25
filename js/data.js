@@ -26,19 +26,27 @@ window.ZUTATEN = [
   { name: "Mozzarella", kategorie: "Milchprodukte & Eier", protein: 18, kcal: 240, preis: 1, verfuegbarkeit: 1, aminos: [38, 49, 100, 104, 35, 112, 39, 14, 64], zustand: "" },
   { name: "Hühnerei", kategorie: "Milchprodukte & Eier", protein: 13, kcal: 145, preis: 1, verfuegbarkeit: 1, aminos: [25, 53, 86, 73, 52, 94, 44, 13, 68], zustand: "ganz" },
   { name: "Milch (1,5 %)", kategorie: "Milchprodukte & Eier", protein: 3.4, kcal: 47, preis: 1, verfuegbarkeit: 1, aminos: [31, 53, 97, 86, 33, 104, 43, 13, 67], zustand: "" },
+  { name: "Feta", kategorie: "Milchprodukte & Eier", protein: 14, kcal: 265, preis: 2, verfuegbarkeit: 1, aminos: [29, 58, 100, 88, 32, 96, 46, 14, 77], zustand: "" },
+  { name: "Emmentaler", kategorie: "Milchprodukte & Eier", protein: 27, kcal: 390, preis: 3, verfuegbarkeit: 1, aminos: [40, 58, 112, 98, 41, 127, 39, 15, 81], aminosHinweis: "Ersatzwert: Schweizer Käse (USDA „Swiss“)", zustand: "" },
+  { name: "Camembert", kategorie: "Milchprodukte & Eier", protein: 20, kcal: 300, preis: 2, verfuegbarkeit: 1, aminos: [35, 50, 95, 91, 35, 116, 37, 16, 66], zustand: "" },
 
   // Hülsenfrüchte
   { name: "Sojabohnen", kategorie: "Hülsenfrüchte", protein: 36, kcal: 410, preis: 2, verfuegbarkeit: 3, aminos: [27, 49, 83, 68, 30, 91, 44, 15, 51], zustand: "trocken" },
   { name: "Linsen (rot)", kategorie: "Hülsenfrüchte", protein: 25, kcal: 340, preis: 1, verfuegbarkeit: 1, aminos: [29, 45, 76, 73, 23, 79, 37, 9, 52], zustand: "trocken" },
   { name: "Linsen (braun)", kategorie: "Hülsenfrüchte", protein: 24, kcal: 330, preis: 1, verfuegbarkeit: 1, aminos: [28, 43, 73, 70, 22, 76, 36, 9, 50], zustand: "trocken" },
   { name: "Kichererbsen", kategorie: "Hülsenfrüchte", protein: 20, kcal: 350, preis: 1, verfuegbarkeit: 1, aminos: [28, 43, 72, 67, 27, 79, 37, 10, 42], zustand: "trocken" },
-  { name: "Weiße Bohnen", kategorie: "Hülsenfrüchte", protein: 21, kcal: 300, preis: 1, verfuegbarkeit: 1, aminos: [28, 44, 80, 69, 26, 82, 42, 12, 52], aminosHinweis: "Ersatzwert: Kidneybohnen", zustand: "trocken" },
+  { name: "Weiße Bohnen", kategorie: "Hülsenfrüchte", protein: 22, kcal: 340, preis: 1, verfuegbarkeit: 1, aminos: [23, 43, 77, 57, 21, 74, 32, 11, 56], zustand: "trocken" },
   { name: "Kidneybohnen", kategorie: "Hülsenfrüchte", protein: 22, kcal: 310, preis: 1, verfuegbarkeit: 1, aminos: [28, 44, 80, 69, 26, 82, 42, 12, 52], zustand: "trocken" },
   { name: "Erbsen (getrocknet)", kategorie: "Hülsenfrüchte", protein: 23, kcal: 320, preis: 1, verfuegbarkeit: 1, aminos: [25, 43, 73, 77, 20, 72, 35, 7, 45], zustand: "trocken" },
   { name: "Lupinen", kategorie: "Hülsenfrüchte", protein: 36, kcal: 370, preis: 2, verfuegbarkeit: 3, aminos: [28, 45, 76, 53, 19, 77, 37, 8, 42], zustand: "trocken" },
   { name: "Erdnüsse", kategorie: "Hülsenfrüchte", protein: 26, kcal: 600, preis: 1, verfuegbarkeit: 1, aminos: [22, 31, 57, 31, 22, 82, 30, 9, 37], zustand: "geröstet" },
   { name: "Kichererbsen (Dose)", kategorie: "Hülsenfrüchte", protein: 7, kcal: 120, preis: 1, verfuegbarkeit: 1, aminos: [28, 43, 72, 67, 27, 79, 37, 10, 42], zustand: "Konserve" },
   { name: "Edamame", kategorie: "Hülsenfrüchte", protein: 12, kcal: 125, preis: 2, verfuegbarkeit: 2, aminos: [27, 49, 83, 68, 30, 91, 44, 15, 51], aminosHinweis: "Ersatzwert: reife Sojabohnen", zustand: "gekocht" },
+  { name: "Mungbohnen", kategorie: "Hülsenfrüchte", protein: 24, kcal: 350, preis: 1, verfuegbarkeit: 2, aminos: [29, 42, 77, 70, 21, 90, 33, 11, 52], zustand: "trocken" },
+  { name: "Schwarze Bohnen", kategorie: "Hülsenfrüchte", protein: 22, kcal: 340, preis: 1, verfuegbarkeit: 1, aminos: [28, 44, 80, 69, 26, 82, 42, 12, 52], zustand: "trocken" },
+  { name: "Pintobohnen", kategorie: "Hülsenfrüchte", protein: 21, kcal: 350, preis: 1, verfuegbarkeit: 2, aminos: [26, 41, 73, 63, 21, 71, 38, 11, 47], zustand: "trocken" },
+  { name: "Ackerbohnen", kategorie: "Hülsenfrüchte", protein: 26, kcal: 340, preis: 1, verfuegbarkeit: 2, aminos: [25, 40, 75, 64, 21, 74, 36, 9, 44], zustand: "trocken" },
+  { name: "Azukibohnen", kategorie: "Hülsenfrüchte", protein: 20, kcal: 330, preis: 2, verfuegbarkeit: 3, aminos: [26, 40, 84, 75, 20, 83, 34, 10, 51], zustand: "trocken" },
 
   // Soja & Fleischersatz
   { name: "Tofu (natur)", kategorie: "Soja & Fleischersatz", protein: 14, kcal: 125, preis: 2, verfuegbarkeit: 1, aminos: [25, 49, 81, 51, 16, 89, 45, 14, 50], zustand: "" },
@@ -60,6 +68,10 @@ window.ZUTATEN = [
   { name: "Cashewkerne", kategorie: "Nüsse & Samen", protein: 18, kcal: 580, preis: 3, verfuegbarkeit: 1, aminos: [21, 36, 69, 43, 35, 68, 32, 14, 51], zustand: "" },
   { name: "Walnüsse", kategorie: "Nüsse & Samen", protein: 15, kcal: 690, preis: 3, verfuegbarkeit: 1, aminos: [22, 35, 65, 24, 25, 62, 33, 9, 42], zustand: "" },
   { name: "Sesam", kategorie: "Nüsse & Samen", protein: 18, kcal: 590, preis: 2, verfuegbarkeit: 1, aminos: [25, 36, 65, 27, 45, 81, 36, 19, 47], zustand: "" },
+  { name: "Haselnüsse", kategorie: "Nüsse & Samen", protein: 15, kcal: 630, preis: 2, verfuegbarkeit: 1, aminos: [25, 31, 60, 24, 28, 58, 28, 11, 40], zustand: "" },
+  { name: "Paranüsse", kategorie: "Nüsse & Samen", protein: 14, kcal: 660, preis: 3, verfuegbarkeit: 1, aminos: [25, 32, 73, 30, 87, 64, 22, 8, 46], zustand: "" },
+  { name: "Pekannüsse", kategorie: "Nüsse & Samen", protein: 9, kcal: 690, preis: 3, verfuegbarkeit: 2, aminos: [24, 31, 55, 27, 31, 59, 28, 9, 38], zustand: "" },
+  { name: "Mohn", kategorie: "Nüsse & Samen", protein: 18, kcal: 525, preis: 2, verfuegbarkeit: 1, aminos: [22, 39, 62, 45, 38, 70, 32, 9, 52], zustand: "" },
 
   // Getreide & Pseudogetreide
   { name: "Haferflocken", kategorie: "Getreide & Pseudogetreide", protein: 13, kcal: 370, preis: 1, verfuegbarkeit: 1, aminos: [20, 36, 70, 45, 47, 75, 27, 13, 49], zustand: "trocken" },
@@ -71,6 +83,16 @@ window.ZUTATEN = [
   { name: "Weizenkeime", kategorie: "Getreide & Pseudogetreide", protein: 27, kcal: 360, preis: 2, verfuegbarkeit: 2, aminos: [26, 34, 63, 59, 37, 65, 39, 13, 48], zustand: "" },
   { name: "Vollkornbrot", kategorie: "Getreide & Pseudogetreide", protein: 8, kcal: 230, preis: 1, verfuegbarkeit: 1, aminos: [23, 37, 68, 29, 38, 78, 30, 15, 45], aminosHinweis: "Ersatzwert: Vollkornweizenbrot", zustand: "" },
   { name: "Reis (Vollkorn)", kategorie: "Getreide & Pseudogetreide", protein: 7, kcal: 350, preis: 1, verfuegbarkeit: 1, aminos: [26, 42, 83, 38, 35, 89, 37, 13, 59], zustand: "trocken" },
+  { name: "Hirse", kategorie: "Getreide & Pseudogetreide", protein: 11, kcal: 380, preis: 1, verfuegbarkeit: 1, aminos: [20, 39, 119, 18, 37, 78, 30, 10, 49], zustand: "trocken" },
+  { name: "Maismehl (Vollkorn)", kategorie: "Getreide & Pseudogetreide", protein: 8, kcal: 360, preis: 1, verfuegbarkeit: 1, aminos: [31, 36, 123, 28, 39, 90, 38, 7, 51], zustand: "trocken" },
+  { name: "Gerstengraupen", kategorie: "Getreide & Pseudogetreide", protein: 10, kcal: 350, preis: 1, verfuegbarkeit: 1, aminos: [21, 34, 63, 35, 38, 79, 32, 16, 46], zustand: "trocken" },
+  { name: "Bulgur", kategorie: "Getreide & Pseudogetreide", protein: 12, kcal: 340, preis: 1, verfuegbarkeit: 1, aminos: [22, 35, 63, 26, 36, 71, 27, 14, 42], zustand: "trocken" },
+  { name: "Couscous", kategorie: "Getreide & Pseudogetreide", protein: 13, kcal: 375, preis: 1, verfuegbarkeit: 1, aminos: [19, 35, 62, 18, 40, 68, 24, 12, 39], zustand: "trocken" },
+  { name: "Hartweizengrieß", kategorie: "Getreide & Pseudogetreide", protein: 13, kcal: 360, preis: 1, verfuegbarkeit: 1, aminos: [18, 35, 62, 17, 40, 68, 24, 12, 39], zustand: "trocken" },
+  { name: "Reis (weiß)", kategorie: "Getreide & Pseudogetreide", protein: 7, kcal: 365, preis: 1, verfuegbarkeit: 1, aminos: [22, 41, 79, 34, 42, 83, 34, 11, 58], zustand: "trocken" },
+  { name: "Wildreis", kategorie: "Getreide & Pseudogetreide", protein: 15, kcal: 355, preis: 3, verfuegbarkeit: 2, aminos: [26, 42, 69, 43, 42, 91, 32, 12, 58], zustand: "trocken" },
+  { name: "Teff", kategorie: "Getreide & Pseudogetreide", protein: 13, kcal: 365, preis: 3, verfuegbarkeit: 3, aminos: [23, 38, 80, 28, 50, 87, 38, 10, 52], zustand: "trocken" },
+  { name: "Nudeln (Hartweizen)", kategorie: "Getreide & Pseudogetreide", protein: 13, kcal: 370, preis: 1, verfuegbarkeit: 1, aminos: [21, 36, 69, 21, 28, 64, 32, 13, 41], zustand: "trocken" },
 
   // Gemüse & Pilze
   { name: "Nährhefeflocken", kategorie: "Gemüse & Pilze", protein: 50, kcal: 350, preis: 3, verfuegbarkeit: 2, aminos: [23, 47, 72, 81, 27, 71, 49, 13, 57], aminosHinweis: "Ersatzwert: Bäckerhefe", zustand: "" },
@@ -80,4 +102,6 @@ window.ZUTATEN = [
   { name: "Spinat", kategorie: "Gemüse & Pilze", protein: 2.7, kcal: 23, preis: 1, verfuegbarkeit: 1, aminos: [22, 51, 78, 61, 31, 83, 43, 14, 56], zustand: "roh" },
   { name: "Champignons", kategorie: "Gemüse & Pilze", protein: 2.7, kcal: 22, preis: 1, verfuegbarkeit: 1,  zustand: "roh" },
   { name: "Rosenkohl", kategorie: "Gemüse & Pilze", protein: 4.5, kcal: 36, preis: 1, verfuegbarkeit: 1, zustand: "roh" },
+  { name: "Kartoffeln", kategorie: "Gemüse & Pilze", protein: 1.7, kcal: 86, preis: 1, verfuegbarkeit: 1, aminos: [22, 41, 60, 61, 29, 82, 36, 16, 56], zustand: "gekocht" },
+  { name: "Zuckermais", kategorie: "Gemüse & Pilze", protein: 3.3, kcal: 86, preis: 1, verfuegbarkeit: 1, aminos: [27, 39, 106, 42, 28, 83, 39, 7, 57], zustand: "roh" },
 ];

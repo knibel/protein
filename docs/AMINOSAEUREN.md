@@ -10,7 +10,7 @@ Wer in der Hauptliste eine Zutat abhakt (bis zu drei), sieht nur noch Zutaten, d
 - **Mehrere Zutaten:** Zwei Zutaten werden wie unten beschrieben exakt gelöst. Ab drei Zutaten sucht ein Raster in 5-%-Schritten (jede Zutat mindestens 10 % des Proteins) die beste Verteilung. Bei gleichem Score gewinnt zuerst der kleinste Anteil der zuletzt hinzugefügten Zutat, danach die ausgewogenste Verteilung der übrigen. Das sind Festlegungen, keine Quellenwerte.
 - **Optimale Mischung (zwei Zutaten):** Der Score ist das Minimum von neun Geraden in `w` und damit konkav und stückweise linear. Kandidaten sind die Ränder, die Schnittpunkte je zweier Geraden und die Punkte, an denen eine Gerade 100 % erreicht. Liegt der gedeckelte Maximalwert auf einer Spanne, gilt das größte `w`, also so wenig Partnerzutat wie nötig. Die Formel ist eine eigene Herleitung, kein zitierter Wert.
 - **Realistische Spanne:** Jede Zutat trägt 10–90 % des Proteins bei. Hinzugefügte Zutaten mit weniger als 10 g oder mehr als 400 g pro 100 g der ersten gewählten Zutat werden verworfen.
-- **Partner:** mindestens 5 g Protein pro 100 g, Aminosäuredaten vorhanden.
+- **Partner:** mindestens 1,5 g Protein pro 100 g (damit auch Kartoffeln, Mais und Milch als Partner möglich sind), Aminosäuredaten vorhanden. Eiweißarme Partner scheitern von selbst an der Mengengrenze (10–400 g pro 100 g der gewählten Zutat).
 - **Einstufung:** Gewinn gegenüber der besten Mischung der bisherigen Auswahl. „ergänzt sehr gut" bei Gewinn ≥ 15 Punkten und Endwert ≥ 90 %, „ergänzt gut" bei Gewinn ≥ 8 und Endwert ≥ 80 %. Schwellen sind unsere Festlegung.
 - **Reihenfolge:** Einstufung, Endwert (Unterschiede unter 5 Punkten gelten als gleich), plausible Mengen, Verfügbarkeit, Preis.
 
@@ -20,9 +20,11 @@ Wichtig: Der Score ist ein **chemischer** Score ohne Verdaulichkeitskorrektur. D
 
 `aminos` in `js/data.js` (Reihenfolge His, Ile, Leu, Lys, Met+Cys, Phe+Tyr, Thr, Trp, Val), mg pro g Protein auf N×6,25-Basis. Quelle ist die USDA FoodData Central SR Legacy (April 2018), selbst umgerechnet. Bei Soja, Nüssen und Samen wurde von USDAs eigenem Stickstofffaktor (z. B. 5,3 bei den meisten Samen, 5,18 bei Mandeln, 5,46 bei Erdnüssen, 5,71 bei Sojabohnen) auf 6,25 umgerechnet. Der Faktor für Sojabohnen fehlt in der USDA-Faktordatei und stammt aus dem Gedächtnis.
 
+Zuletzt ergänzt (Kartoffeln, Zuckermais, Hirse, Mais, Gerste, Bulgur, Couscous, Hartweizengrieß, weißer und Wildreis, Teff, Nudeln, Mung-, Schwarze, Pinto-, Acker- und Azukibohnen, Weiße Bohnen (jetzt Navy-Bohnen statt Kidney-Ersatz), Haselnüsse, Paranüsse, Pekannüsse, Mohn, Feta, Emmentaler, Camembert): direkt aus den USDA-SR-Legacy-CSV-Dateien berechnet, einschließlich des in der Datei hinterlegten Stickstofffaktors. Bewusst weggelassen, weil die USDA-Werte unplausibel oder unvollständig sind: Macadamia (Lysin 2, Met+Cys 3 mg/g), Roggenkorn (Cystein fehlt), Kichererbsenmehl und Ricotta (keine Aminosäuredaten), Joghurt und Buttermilch (Profil unzuverlässig bzw. identisch mit Milch).
+
 Ohne Aminosäuredaten (nehmen nicht teil): Seitan, Sojamilch, Rosenkohl (Tyrosin fehlt), Champignons (inkonsistente Datenlage).
 
-Ersatzwerte (`aminosHinweis` zeigt sie in der App an): Magerquark und Harzer Käse = Hüttenkäse; Skyr und Griechischer Joghurt = Milch (der USDA-Joghurteintrag gilt als unzuverlässig); Räuchertofu = Tofu; Edamame = reife Sojabohnen; Sojageschnetzeltes = entfettetes Sojamehl; Nährhefe = Bäckerhefe; Weiße Bohnen = Kidneybohnen; Dinkelmehl = Dinkelkorn; Vollkornbrot = Vollkornweizenbrot.
+Ersatzwerte (`aminosHinweis` zeigt sie in der App an): Magerquark und Harzer Käse = Hüttenkäse; Skyr und Griechischer Joghurt = Milch (der USDA-Joghurteintrag gilt als unzuverlässig); Räuchertofu = Tofu; Edamame = reife Sojabohnen; Sojageschnetzeltes = entfettetes Sojamehl; Nährhefe = Bäckerhefe; Dinkelmehl = Dinkelkorn; Emmentaler = USDA „Cheese, swiss“; Vollkornbrot = Vollkornweizenbrot.
 
 ## Was belegt ist und was nicht
 
@@ -30,6 +32,8 @@ Ersatzwerte (`aminosHinweis` zeigt sie in der App an): Magerquark und Harzer Kä
 - Der einzige veröffentlichte Mischungsoptimum, den wir prüfen konnten: Erbse + Reis, 59 % : 41 % Protein, Score 84 (Herreman et al. 2020, Muster für 0,5–3 Jahre, mit Verdaulichkeit). Mit unseren Rohdaten und dem Erwachsenenmuster ergibt sich etwa 100 % bei ungefähr 50 : 50. Das ist eine andere Datenbasis, kein Rechenfehler; `tests/komplement.test.js` prüft stattdessen, dass das berechnete Optimum tatsächlich maximal ist.
 - Für Reis + Bohnen, Hummus, Erdnuss + Weizen, Mais + Bohnen und Soja + Reis gibt es keinen belegten kombinierten Score. Alle Paarungen sind **berechnet**.
 - Es gibt keine belegte Pflicht, ergänzende Proteine in derselben Mahlzeit zu essen; die App sagt, dass die Kombination über den Tag genügt.
+
+- Kartoffeln erreichen allein schon etwa 98 % (begrenzend: Leucin), Hühnerei 100 %. Eine Kartoffel-Ei-Kombination bringt im Aminosäure-Score deshalb keinen Gewinn und erscheint nicht als „Ergänzung“. Der oft genannte hohe Wert der Kombination (biologische Wertigkeit) ist ein anderes Maß und hier nicht berechnet.
 
 ## Vor dem Verlassen auf einzelne Werte prüfen
 
