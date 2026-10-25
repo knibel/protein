@@ -346,5 +346,9 @@ window.GERICHTE = [
   { name: "Grünkohl-Brokkoli-Gratin", herkunft: "Deutschland",
     beschreibung: "Überbackenes Kohlgemüse mit Ei und Käse.",
     zutaten: [{ name: "Brokkoli", gramm: 150 }, { name: "Grünkohl", gramm: 50 }, { name: "Hühnerei", gramm: 60 }, { name: "Gouda", gramm: 30 }],
-    weitere: "Muskat, Zwiebeln" }
+    weitere: "Muskat, Zwiebeln" },
+  { name: "Dal Makhani mit Reis", herkunft: "Punjab, Indien",
+    beschreibung: "Cremiges Linsen-Bohnen-Gericht; traditionell mit schwarzen Linsen (Urad), hier als braune Linsen gerechnet, zusammen mit Kidneybohnen.",
+    zutaten: [{ name: "Linsen (braun)", gramm: 40 }, { name: "Kidneybohnen", gramm: 30 }, { name: "Reis (Vollkorn)", gramm: 50 }],
+    weitere: "Tomaten, Zwiebeln, Knoblauch, Ingwer, Butter, Sahne, Garam Masala" }
 ];
