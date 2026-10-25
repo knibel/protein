@@ -1,6 +1,6 @@
 # Aminosäure-Ergänzung
 
-Wer in der Hauptliste eine Zutat abhakt (bis zu drei), sieht nur noch Zutaten, die zusammen mit der Auswahl ein besseres Aminosäureprofil ergeben. Jedes weitere Häkchen filtert weiter: Mit einer Zutat entstehen Zweier-, mit zwei Zutaten Dreier-Kombinationen und so fort. Ein Kasten oberhalb der Liste zeigt die beste Mischung der Auswahl. Erreicht die Auswahl bereits 100 %, sagt die App das und zeigt wieder alle Zutaten. „Auswahl zurücksetzen" hebt den Filter auf. Zutaten ohne Aminosäuredaten sind nicht wählbar und verschwinden, solange eine Auswahl besteht. Die Recherche dazu steht in `reports/Amino acid complementarity data.md`, die Einzelnotizen in `research_notes/Amino acid complementarity data/`.
+Wer in der Hauptliste eine Zutat abhakt (bis zu drei), sieht nur noch Zutaten, die zusammen mit der Auswahl ein besseres Aminosäureprofil ergeben. Jedes weitere Häkchen filtert weiter: Mit einer Zutat entstehen Zweier-, mit zwei Zutaten Dreier-Kombinationen und so fort. Ein Kasten oberhalb der Liste zeigt die beste Mischung der Auswahl. Erreicht die Auswahl bereits mindestens 95 % (Konstante `VOLL`; die Daten sind Richtwerte, 98 % gelten als ausreichend), sagt die App das und zeigt wieder alle Zutaten. „Auswahl zurücksetzen" hebt den Filter auf. Zutaten ohne Aminosäuredaten sind nicht wählbar und verschwinden, solange eine Auswahl besteht. Die Recherche dazu steht in `reports/Amino acid complementarity data.md`, die Einzelnotizen in `research_notes/Amino acid complementarity data/`.
 
 ## Methode
 
@@ -33,7 +33,7 @@ Ersatzwerte (`aminosHinweis` zeigt sie in der App an): Magerquark und Harzer Kä
 - Für Reis + Bohnen, Hummus, Erdnuss + Weizen, Mais + Bohnen und Soja + Reis gibt es keinen belegten kombinierten Score. Alle Paarungen sind **berechnet**.
 - Es gibt keine belegte Pflicht, ergänzende Proteine in derselben Mahlzeit zu essen; die App sagt, dass die Kombination über den Tag genügt.
 
-- Kartoffeln erreichen allein schon etwa 98 % (begrenzend: Leucin), Hühnerei 100 %. Eine Kartoffel-Ei-Kombination bringt im Aminosäure-Score deshalb keinen Gewinn und erscheint nicht als „Ergänzung“. Der oft genannte hohe Wert der Kombination (biologische Wertigkeit) ist ein anderes Maß und hier nicht berechnet.
+- Kartoffeln erreichen allein schon etwa 98 % (begrenzend: Leucin), Hühnerei 100 %. Eine Kartoffel-Ei-Kombination bringt im Aminosäure-Score deshalb keinen Gewinn und erscheint nicht als „Ergänzung“. Weil Kartoffeln über der 95-%-Grenze liegen, zeigt die App bei dieser Auswahl alle Zutaten (frei kombinierbar) statt einer leeren Ergänzungsliste. Der oft genannte hohe Wert der Kombination (biologische Wertigkeit) ist ein anderes Maß und hier nicht berechnet.
 
 ## Vor dem Verlassen auf einzelne Werte prüfen
 

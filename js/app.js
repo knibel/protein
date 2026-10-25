@@ -186,7 +186,7 @@
     var text = auswahl.length === 1
       ? auswahl[0].name + " allein: Aminosäure-Score " + prozent(m.score * 100)
       : "Beste Mischung: " + mengenText(auswahl, m.w) + " (" + anteilText(m.w) + ") – Aminosäure-Score " + prozent(m.score * 100);
-    text += erg.voll ? ". Diese Auswahl deckt alle essenziellen Aminosäuren; weitere Zutaten sind frei kombinierbar."
+    text += erg.voll ? ". Diese Auswahl deckt " + (m.score >= 1 ? "alle" : "nahezu alle") + " essenziellen Aminosäuren; weitere Zutaten sind frei kombinierbar."
       : ", begrenzt durch " + K.NAMEN[m.limit] + ". Die Liste unten zeigt nur Zutaten, die das verbessern.";
     el.ergText.textContent = text;
   }

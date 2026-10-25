@@ -41,6 +41,8 @@ assert.ok(Math.abs(K.mengen(dreier, k.w)[0] - 100) < 1e-9);
 
 // Bereits vollwertige Auswahl braucht keine Ergänzung; zweistufige Auswahl liefert eine Liste.
 assert.strictEqual(K.ergaenzungen([z("Hühnerei")], window.ZUTATEN).voll, true);
+// Kartoffeln liegen bei ca. 98 %: gelten als ausreichend, alle Zutaten bleiben wählbar.
+assert.strictEqual(K.ergaenzungen([z("Kartoffeln")], window.ZUTATEN).voll, true);
 const zwei = K.ergaenzungen([z("Reis (Vollkorn)"), z("Mandeln")], window.ZUTATEN);
 assert.ok(zwei.voll || zwei.treffer.length > 0);
 

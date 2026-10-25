@@ -15,6 +15,7 @@
   var MIN_PROTEIN = 1.5;    // g Protein pro 100 g: schwächere Partner liefern praktisch nichts (Kartoffeln: 1,7)
   var W_MIN = 0.1;          // jede Zutat einer Mischung trägt mindestens 10 % des Proteins bei
   var W_MAX = 0.9;
+  var VOLL = 0.95;          // ab diesem Score gilt eine Auswahl als ausreichend (Daten sind Richtwerte)
   var MIN_GEWINN = 8;       // Prozentpunkte Verbesserung gegenüber der Zutat allein
   var MIN_ENDWERT = 80;
   var MIN_GRAMM = 10;       // Partnermenge pro 100 g der gewählten Zutat: darunter bzw. darüber
@@ -128,7 +129,7 @@
   // Ergebnis: { basis: Score der besten Mischung der Auswahl, voll: Auswahl deckt schon alles, treffer }.
   function ergaenzungen(auswahl, alle) {
     var s0 = kombiniere(auswahl);
-    var ergebnis = { basis: s0, mischung: s0, voll: s0.score >= 1, treffer: [] };
+    var ergebnis = { basis: s0, mischung: s0, voll: s0.score >= VOLL, treffer: [] };
     if (ergebnis.voll) return ergebnis;
     alle.forEach(function (z) {
       if (auswahl.indexOf(z) !== -1 || !z.aminos || z.protein < MIN_PROTEIN) return;
