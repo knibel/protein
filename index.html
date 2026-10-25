@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proteinquellen finden</title>
+  <meta name="description" content="Eiweißreiche Lebensmittel nach Proteingehalt und Kategorie finden.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Proteinquellen finden</h1>
+    <p>Eiweißreiche Zutaten im Vergleich – Werte pro 100&nbsp;g.</p>
+  </header>
+
+  <main>
+    <section class="filter" aria-label="Filter">
+      <label>Suche
+        <input type="search" id="suche" placeholder="z. B. Linsen" autocomplete="off">
+      </label>
+      <label>Kategorie
+        <select id="kategorie"><option value="">Alle</option></select>
+      </label>
+      <label>Sortierung
+        <select id="sortierung">
+          <option value="protein">Protein pro 100 g</option>
+          <option value="dichte">Proteinanteil an Kalorien</option>
+          <option value="verfuegbarkeit">Verfügbarkeit (beste zuerst)</option>
+          <option value="preis">Preis (günstigste zuerst)</option>
+          <option value="ergaenzung">Beste Ergänzung zur Auswahl</option>
+          <option value="name">Name (A–Z)</option>
+        </select>
+      </label>
+      <label>Mindestens <output id="minProteinAnzeige">0</output>&nbsp;g Protein
+        <input type="range" id="minProtein" min="0" max="80" step="1" value="0">
+      </label>
+      <label>Portion (g) für Rechner
+        <input type="number" id="portion" min="1" max="2000" value="100" inputmode="numeric">
+      </label>
+    </section>
+
+    <section id="ergaenzung" class="ergaenzung" aria-live="polite" hidden>
+      <h2 id="ergaenzungTitel"></h2>
+      <p id="ergaenzungText"></p>
+      <button type="button" id="zuruecksetzen" class="aktion">Auswahl zurücksetzen</button>
+      <p class="hinweis">Berechnet nach dem FAO-Referenzmuster 2013 (ab 3 Jahren) aus den Aminosäuren pro Gramm Protein, ohne Verdaulichkeitskorrektur. Ergänzende Lebensmittel müssen nicht in derselben Mahlzeit gegessen werden; es genügt, sie über den Tag zu kombinieren. Richtwerte, keine Ernährungsberatung.</p>
+    </section>
+
+    <p class="tipp">Tipp: Haken Sie bis zu drei Zutaten an. Die Liste zeigt dann nur noch Zutaten, die sich mit Ihrer Auswahl zu einem guten Aminosäureprofil ergänzen.</p>
+    <p id="status" role="status" aria-live="polite"></p>
+    <ul id="liste" class="liste"></ul>
+  </main>
+
+  <footer>
+    <p>Gerundete Richtwerte pro 100 g (u. a. nach BLS und USDA), keine Ernährungsberatung.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/komplement.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
