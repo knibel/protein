@@ -4,7 +4,7 @@ Statische Web-App „Proteinquellen finden" für GitHub Pages. HTML + CSS + Vani
 
 ## Regeln
 
-- **Kein Fleisch und kein Fisch/Meeresfrüchte in den Daten** – bewusste Vorgabe des Besitzers. Alle Zutaten sind vegetarisch (inkl. vegan); es gibt bewusst **keinen Ernährungsform-Filter**. Es gibt dafür auch kein Datenfeld und kein Badge. Nicht wieder hinzufügen, auch nicht auf Anfrage nach „Vollständigkeit".
+- **Keine Eiweißpulver (Protein-Isolate/-Konzentrate) und kein Fleisch, Fisch/Meeresfrüchte in den Daten** – bewusste Vorgabe des Besitzers. Alle Zutaten sind vegetarisch (inkl. vegan); es gibt bewusst **keinen Ernährungsform-Filter**. Es gibt dafür auch kein Datenfeld und kein Badge. Nicht wieder hinzufügen, auch nicht auf Anfrage nach „Vollständigkeit".
 - **Sprache:** Alles Nutzersichtbare (UI-Texte, Daten, Doku) ist auf Deutsch. Code-Bezeichner dürfen deutsch sein und sind es im Bestand (`zutaten`, `rendere`, `filtere`) – diesem Stil folgen. Deutsche Umlaute und „ß" korrekt schreiben.
 - **Keine Build-Tools, Frameworks oder CDN-Skripte** einführen. Die Dateien werden unverändert ausgeliefert.
 - **Nur relative Pfade** (`css/style.css`, nie `/css/style.css`), weil Pages unter `/<repo>/` läuft.

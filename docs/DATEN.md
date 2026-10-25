@@ -14,7 +14,7 @@ Die Zutaten stehen in `js/data.js` im Array `window.ZUTATEN`.
 | `verfuegbarkeit` | 1–3 | Verfügbarkeit in deutschen Supermärkten: `1` überall (auch Discounter), `2` gut (größere Supermärkte, Drogerie, Bio-Supermarkt), `3` eingeschränkt (Reformhaus, Fachhandel, online) |
 | `aminos` | Array aus 9 Zahlen | Essenzielle Aminosäuren in mg pro g Protein: His, Ile, Leu, Lys, Met+Cys, Phe+Tyr, Thr, Trp, Val (N×6,25-Basis). Optional; ohne Feld nimmt die Zutat nicht an der Ergänzung teil. Herkunft: [AMINOSAEUREN.md](AMINOSAEUREN.md) |
 | `aminosHinweis` | String | Optional, nennt Ersatzwerte oder Unsicherheit; wird in der App angezeigt |
-| `zustand` | String | z. B. `roh`, `gekocht`, `trocken`, `Konserve`, `Pulver`; darf leer sein |
+| `zustand` | String | z. B. `roh`, `gekocht`, `trocken`, `Konserve`; darf leer sein |
 
 ## Regeln
 

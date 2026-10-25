@@ -25,7 +25,6 @@ window.ZUTATEN = [
   { name: "Gouda", kategorie: "Milchprodukte & Eier", protein: 25, kcal: 355, preis: 2, verfuegbarkeit: 1, aminos: [42, 53, 105, 109, 40, 118, 38, 14, 74], zustand: "" },
   { name: "Mozzarella", kategorie: "Milchprodukte & Eier", protein: 18, kcal: 240, preis: 1, verfuegbarkeit: 1, aminos: [38, 49, 100, 104, 35, 112, 39, 14, 64], zustand: "" },
   { name: "Hühnerei", kategorie: "Milchprodukte & Eier", protein: 13, kcal: 145, preis: 1, verfuegbarkeit: 1, aminos: [25, 53, 86, 73, 52, 94, 44, 13, 68], zustand: "ganz" },
-  { name: "Molkenproteinpulver", kategorie: "Milchprodukte & Eier", protein: 80, kcal: 390, preis: 3, verfuegbarkeit: 2, aminos: [19, 57, 94, 81, 39, 61, 65, 16, 55], aminosHinweis: "Ersatzwert: getrocknete Süßmolke, kein Isolat", zustand: "Pulver" },
   { name: "Milch (1,5 %)", kategorie: "Milchprodukte & Eier", protein: 3.4, kcal: 47, preis: 1, verfuegbarkeit: 1, aminos: [31, 53, 97, 86, 33, 104, 43, 13, 67], zustand: "" },
 
   // Hülsenfrüchte
@@ -48,7 +47,6 @@ window.ZUTATEN = [
   { name: "Seitan", kategorie: "Soja & Fleischersatz", protein: 25, kcal: 140, preis: 3, verfuegbarkeit: 2, zustand: "" },
   { name: "Sojageschnetzeltes (texturiert)", kategorie: "Soja & Fleischersatz", protein: 50, kcal: 330, preis: 2, verfuegbarkeit: 2, aminos: [25, 44, 74, 61, 27, 82, 40, 13, 46], aminosHinweis: "Ersatzwert: entfettetes Sojamehl", zustand: "trocken" },
   { name: "Sojamilch (ungesüßt)", kategorie: "Soja & Fleischersatz", protein: 3.3, kcal: 40, preis: 1, verfuegbarkeit: 1, zustand: "" },
-  { name: "Erbsenproteinpulver", kategorie: "Soja & Fleischersatz", protein: 80, kcal: 380, preis: 3, verfuegbarkeit: 2, aminos: [25, 43, 73, 77, 20, 72, 35, 7, 45], aminosHinweis: "Ersatzwert: getrocknete Erbsen, kein Isolat", zustand: "Pulver" },
 
   // Nüsse & Samen
   { name: "Hanfsamen (geschält)", kategorie: "Nüsse & Samen", protein: 32, kcal: 550, preis: 3, verfuegbarkeit: 2, aminos: [26, 35, 59, 34, 43, 73, 34, 10, 47], zustand: "" },

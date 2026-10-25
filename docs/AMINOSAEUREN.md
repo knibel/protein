@@ -22,7 +22,7 @@ Wichtig: Der Score ist ein **chemischer** Score ohne Verdaulichkeitskorrektur. D
 
 Ohne Aminosäuredaten (nehmen nicht teil): Seitan, Sojamilch, Rosenkohl (Tyrosin fehlt), Champignons (inkonsistente Datenlage).
 
-Ersatzwerte (`aminosHinweis` zeigt sie in der App an): Magerquark und Harzer Käse = Hüttenkäse; Skyr und Griechischer Joghurt = Milch (der USDA-Joghurteintrag gilt als unzuverlässig); Räuchertofu = Tofu; Edamame = reife Sojabohnen; Sojageschnetzeltes = entfettetes Sojamehl; Erbsenproteinpulver = getrocknete Erbsen; Molkenproteinpulver = getrocknete Süßmolke; Nährhefe = Bäckerhefe; Weiße Bohnen = Kidneybohnen; Dinkelmehl = Dinkelkorn; Vollkornbrot = Vollkornweizenbrot.
+Ersatzwerte (`aminosHinweis` zeigt sie in der App an): Magerquark und Harzer Käse = Hüttenkäse; Skyr und Griechischer Joghurt = Milch (der USDA-Joghurteintrag gilt als unzuverlässig); Räuchertofu = Tofu; Edamame = reife Sojabohnen; Sojageschnetzeltes = entfettetes Sojamehl; Nährhefe = Bäckerhefe; Weiße Bohnen = Kidneybohnen; Dinkelmehl = Dinkelkorn; Vollkornbrot = Vollkornweizenbrot.
 
 ## Was belegt ist und was nicht
 
